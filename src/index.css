@@ -1,0 +1,42 @@
+@import "~semantic-ui-css/semantic.css";
+@import "~leaflet/dist/leaflet.css";
+@import "~tachyons/css/tachyons.css";
+@import "~leaflet.markercluster/dist/MarkerCluster.css";
+@import "~leaflet.markercluster/dist/MarkerCluster.Default.css";
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.my-div-icon
+{
+  background:rgba(255, 0, 0, 0.603);
+  border:1px solid rgba(255, 255, 255, .5);
+  color:blue;
+  font-weight:bold;
+  text-align:center;
+  border-radius:50%;
+  line-height:30px;
+}
+
+.hexbin-hexagon {
+	stroke: #000;
+  stroke-width: .5px;
+
+}
+
+.hexbin-container:hover .hexbin-hexagon {
+	transition: 200ms;
+	stroke: orange;
+	stroke-width: 1px;
+	stroke-opacity: 1;
+}
+
+.hexbin-tooltip {
+	padding: 8px;
+	border-radius: 4px;
+	border: 1px solid black;
+	background-color: white;
+}
