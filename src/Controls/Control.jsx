@@ -70,7 +70,24 @@ class Control extends React.Component {
   getErddapURLs = () => {
     const {erddapResults} = this.props
     if( erddapResults.length > 0){
-      return erddapResults.map( x => x.name)
+
+      return erddapResults.map( x => 
+        <List.Item>
+          <List.Icon name='github' size='medium' verticalAlign='middle' />
+          <List.Content>
+            <Button.Group floated='right'>
+              <Button compact icon>
+                <Icon name='eye' />
+              </Button>
+              <Button compact icon>
+                <Icon name='trash alternate outline' />
+              </Button>
+            </Button.Group>
+            <List.Header as={x.name}>{x.name}</List.Header>
+            <List.Description as={x.name}></List.Description>
+          </List.Content>
+        </List.Item> 
+      )
     }
   }
 
@@ -120,7 +137,9 @@ class Control extends React.Component {
             </Grid.Row>
             <Grid.Row columns={1}>
               <Grid.Column width={16}>
-                <List items={this.getErddapURLs()} />
+                <List divided relaxed >
+                  {this.getErddapURLs()}
+                </List>
               </Grid.Column>
             </Grid.Row>
           </Grid>

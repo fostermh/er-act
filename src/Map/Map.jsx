@@ -7,7 +7,6 @@ import '@asymmetrik/leaflet-d3'
 import 'leaflet.heat'
 
 import PropTypes from 'prop-types'
-import chroma, { hex } from 'chroma-js'
 
 import HereTileLayers from './hereTileLayers'
 
@@ -145,6 +144,9 @@ class Map extends React.Component {
     var fcount = 0
 
     datasets.forEach(dataset => {
+      if(!dataset.visibile){
+        return;
+      } 
       var points = dataset.data
       features = L.geoJSON(points.features, {
         pointToLayer: function (feature, latlng) {

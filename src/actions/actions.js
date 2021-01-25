@@ -32,7 +32,7 @@ const processErddapResponse = (json, url) => dispatch => {
     // parse the json file and dispatch the results which will be reduced
     const results = parseErddapResponse(json)
     // let's let the loading spinner now that it doesn't have to spin anymore
-    dispatch(receiveErddapData({'url':url, 'name':url.pathname.match(/tabledap\/(.*)\.geoJson/)[1], 'data':results}))
+    dispatch(receiveErddapData({'url':url, 'name':url.pathname.match(/tabledap\/(.*)\.geoJson/)[1], 'data':results, 'visibile':true}))
   }
 
 export const receiveErddapData = payload => ({
